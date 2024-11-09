@@ -7,10 +7,10 @@ const meta = {
   title: "Collapse",
   component: Collapse,
   parameters: {
-    layout: "centered",
+    layout: "padded"
   },
   tags: ["autodocs"],
-  argTypes: {},
+  argTypes: {}
 } satisfies Meta<typeof Collapse>;
 
 export default meta;
@@ -18,14 +18,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    title: <h3>Show content</h3>,
-    children: (
-      <>
-        <h1>Any content</h1>
-        <p>
-          This component can be controlled when using show and toggle props.
-        </p>
-      </>
-    ),
-  },
+    title: React.createElement("h3", null, "Test"),
+    children: React.createElement("p", null, "Test")
+  }
 };
