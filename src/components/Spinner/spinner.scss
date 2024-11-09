@@ -1,0 +1,34 @@
+.pf-spinner {
+  animation: rotation 1.4s linear infinite;
+}
+
+.pf-path {
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: dash 1.4s ease-in-out infinite;
+}
+
+.pf-path-primary {
+  stroke: var(--pixel-flow-primary);
+}
+
+.pf-path-success {
+  stroke: var(--pixel-flow-success);
+}
+
+.pf-path-danger {
+  stroke: var(--pixel-flow-danger);
+}
+
+.pf-path-warning {
+  stroke: var(--pixel-flow-warning);
+}
+
+.pf-path-white {
+  stroke: white;
+}
+
+.pf-path-black {
+  stroke: black;
+}

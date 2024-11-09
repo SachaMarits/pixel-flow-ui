@@ -1,0 +1,27 @@
+.pf-collapse-wrapper {
+  .pf-collapse-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .pf-collapse-content {
+    height: 0px;
+    opacity: 0;
+    overflow: hidden;
+    transition: 1s;
+  }
+
+  &.pf-active {
+    .pf-collapse-title {
+      padding-bottom: 16px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid rgb(238, 238, 238);
+    }
+
+    .pf-collapse-content {
+      height: auto;
+      opacity: 1;
+    }
+  }
+}

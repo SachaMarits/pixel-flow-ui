@@ -1,0 +1,78 @@
+.pf-calendar-header {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .pf-left,
+  .pf-right {
+    padding: 0 16px;
+    color: var(--pixel-flow-primary);
+    font-size: xx-large;
+  }
+}
+
+.pf-calendar {
+  width: 100%;
+
+  .pf-day-names,
+  .pf-week {
+    display: flex;
+
+    > div {
+      flex: 1;
+      border: 1px solid #ddd;
+    }
+  }
+
+  .pf-day-names {
+    text-align: center;
+  }
+
+  .pf-week {
+    flex: 1;
+    min-height: 100px;
+    text-align: right;
+  }
+
+  .pf-day {
+    padding: 8px;
+
+    .pf-day-number {
+      display: inline-block;
+      margin: 0;
+    }
+
+    &:not(.pf-disabled) {
+      transition: 0.25s;
+      cursor: pointer;
+
+      &:hover {
+        background: #e0ebf0;
+      }
+    }
+
+    &.pf-disabled {
+      background: #eeeeee;
+    }
+
+    &.pf-active .pf-day-number {
+      background: var(--pixel-flow-primary);
+      color: white;
+      border-radius: 100%;
+      width: 1.5rem;
+      height: 1.5rem;
+      line-height: 1.5rem;
+      text-align: center;
+    }
+
+    .pf-day-data {
+      text-align: left;
+      background: var(--pixel-flow-primary);
+      border-radius: 4px;
+      padding: 2px;
+      font-size: small;
+      margin-top: 5px;
+      color: white;
+    }
+  }
+}

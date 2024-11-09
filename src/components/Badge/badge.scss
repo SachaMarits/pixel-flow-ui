@@ -1,0 +1,31 @@
+.pf-badge {
+  border-radius: 16px;
+  padding: 2px 12px;
+  font-size: small;
+  color: white;
+  display: inline-block;
+}
+
+.pf-badge-primary {
+  background: var(--pixel-flow-primary);
+}
+
+.pf-badge-secondary {
+  background: var(--pixel-flow-secondary);
+}
+
+.pf-badge-warning {
+  background: var(--pixel-flow-warning);
+}
+
+.pf-badge-default {
+  background: var(--pixel-flow-default);
+}
+
+.pf-badge-success {
+  background: var(--pixel-flow-success);
+}
+
+.pf-badge-danger {
+  background: var(--pixel-flow-danger);
+}

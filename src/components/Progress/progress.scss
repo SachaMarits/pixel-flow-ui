@@ -1,0 +1,19 @@
+.pf-progress {
+  display: flex;
+  height: 6px;
+  overflow: hidden;
+  font-size: 0.75rem;
+  border-radius: 8px;
+  background-color: #f3f7fa;
+}
+
+.pf-progress-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  background-color: var(--well-rounded-primary);
+  transition: width 0.6s ease;
+}

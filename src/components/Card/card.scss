@@ -1,0 +1,29 @@
+.pf-card,
+.pf-modal-content,
+.pf-collapse-wrapper {
+  padding: 16px;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0pf-04);
+  border-radius: 16px;
+  border-color: transparent;
+  background: white;
+
+  .pf-card-header {
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+  }
+
+  .pf-card-footer {
+    margin: 16px -16px -16px -16px;
+    border-radius: 0 0 8px 8px;
+    padding: 16px;
+    background: #f0f5f7;
+  }
+}
+
+.pf-card-compact {
+  background: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}

@@ -1,29 +1,48 @@
 {
   "name": "pixel-flow-ui",
-  "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "main": "dist/pixel-flow-ui.umd.js",
+  "module": "dist/pixel-flow-ui.es.js",
+  "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "build": "vite build",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@types/node": "^22.9.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "3.2.2",
     "@eslint/js": "^9.13.0",
+    "@storybook/addon-essentials": "8.4.2",
+    "@storybook/addon-interactions": "8.4.2",
+    "@storybook/addon-onboarding": "8.4.2",
+    "@storybook/blocks": "8.4.2",
+    "@storybook/react": "8.4.2",
+    "@storybook/react-vite": "8.4.2",
+    "@storybook/test": "8.4.2",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "eslint": "^9.13.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.14",
+    "eslint-plugin-storybook": "^0.11.0",
     "globals": "^15.11.0",
+    "sass": "^1.80.6",
+    "storybook": "8.4.2",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.11.0",
-    "vite": "^5.4.10"
+    "vite": "^5.4.10",
+    "vite-plugin-dts": "^4.3.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
   }
 }

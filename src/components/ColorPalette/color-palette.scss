@@ -1,0 +1,67 @@
+.pf-color-palette {
+  display: flex;
+}
+
+.pf-color-palette input[type="color"] {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  height: 20px;
+  background: transparent;
+
+  &::-moz-color-swatch {
+    border: none;
+  }
+
+  &::-webkit-color-swatch {
+    border: none;
+  }
+
+  &::-moz-color-swatch-wrapper {
+    padding: 0;
+  }
+
+  &::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+
+  &::-moz-color-swatch,
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &::-webkit-color-swatch,
+  &::-webkit-focus-inner {
+    border: 0;
+  }
+
+  &::-moz-focus-inner {
+    padding: 0;
+  }
+
+  &::-webkit-focus-inner {
+    padding: 0;
+  }
+
+  &:first-child::-moz-color-swatch {
+    border-top-left-radius: 16px !important;
+    border-bottom-left-radius: 16px !important;
+  }
+
+  &:last-child::-moz-color-swatch {
+    border-top-right-radius: 16px !important;
+    border-bottom-right-radius: 16px !important;
+  }
+
+  &:first-child::-webkit-color-swatch {
+    border-top-left-radius: 16px !important;
+    border-bottom-left-radius: 16px !important;
+  }
+
+  &:last-child::-webkit-color-swatch {
+    border-top-right-radius: 16px !important;
+    border-bottom-right-radius: 16px !important;
+  }
+}

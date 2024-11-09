@@ -1,0 +1,80 @@
+.pf-btn {
+  display: inline-flex;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-weight: 500;
+  border: 0;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.25s;
+  color: white;
+}
+
+.pf-btn:hover {
+  filter: brightness(92.5%);
+}
+
+.pf-btn:active {
+  filter: brightness(85%);
+}
+
+.pf-btn:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.pf-btn:disabled:hover {
+  filter: brightness(100%);
+}
+
+.pf-btn-primary {
+  background: var(--pixel-flow-primary);
+  &:hover {
+    --hover: color-mix(in srgb, var(--pixel-flow-primary), #0000 76%);
+    box-shadow: var(--hover) 0px 8px 16px 0px;
+  }
+}
+.pf-btn-success {
+  background: var(--pixel-flow-success);
+  &:hover {
+    --hover: color-mix(in srgb, var(--pixel-flow-success), #0000 76%);
+    box-shadow: var(--hover) 0px 8px 16px 0px;
+  }
+}
+.pf-btn-danger {
+  background: var(--pixel-flow-danger);
+  &:hover {
+    --hover: color-mix(in srgb, var(--pixel-flow-danger), #0000 76%);
+    box-shadow: var(--hover) 0px 8px 16px 0px;
+  }
+}
+.pf-btn-warning {
+  background: var(--pixel-flow-warning);
+  &:hover {
+    --hover: color-mix(in srgb, var(--pixel-flow-warning), #0000 76%);
+    box-shadow: var(--hover) 0px 8px 16px 0px;
+  }
+}
+.pf-btn-default {
+  background: var(--pixel-flow-default);
+  &:hover {
+    --hover: color-mix(in srgb, var(--pixel-flow-default), #0000 76%);
+    box-shadow: var(--hover) 0px 8px 16px 0px;
+  }
+}
+.pf-btn-gradient {
+  background: linear-gradient(90deg, var(--pixel-flow-primary) -30%, var(--pixel-flow-secondary) 130%);
+}
+
+.pf-btn-disabled {
+  opacity: 0.65 !important;
+  &:hover {
+    cursor: progress;
+    filter: none;
+    box-shadow: none;
+  }
+}

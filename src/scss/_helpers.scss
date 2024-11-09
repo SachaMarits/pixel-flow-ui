@@ -1,0 +1,32 @@
+.pf-bg-primary {
+  background: var(--pixel-flow-primary) !important;
+}
+
+.pf-bg-secondary {
+  background: var(--pixel-flow-secondary) !important;
+}
+
+.pf-bg-success {
+  background: var(--pixel-flow-success) !important;
+}
+
+.pf-bg-danger {
+  background: var(--pixel-flow-danger) !important;
+}
+
+.pf-bg-warning {
+  background: var(--pixel-flow-warning) !important;
+}
+
+.pf-bg-default {
+  background: var(--pixel-flow-default) !important;
+}
+
+.pf-pointer {
+  cursor: pointer;
+  transition: 0.25s;
+  user-select: none;
+  &:hover {
+    filter: brightness(90%);
+  }
+}
