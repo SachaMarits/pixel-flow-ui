@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
+import "./transition-story.scss";
 import { Transition } from "./index";
 import React from "react";
 
@@ -16,10 +17,26 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const OpacityExample: Story = {
   args: {
     in: true,
     duration: 1000,
-    children: React.createElement("p", null, "Transition"),
+    children: React.createElement(
+      "p",
+      { className: "transition-story-opacity" },
+      "Opacity transition"
+    ),
+  },
+};
+
+export const TranslationExample: Story = {
+  args: {
+    in: true,
+    duration: 1000,
+    children: React.createElement(
+      "p",
+      { className: "transition-story-translate" },
+      "Translation transition"
+    ),
   },
 };

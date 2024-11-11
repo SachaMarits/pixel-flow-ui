@@ -1,6 +1,6 @@
 import "./button.scss";
 import { Spinner } from "../Spinner";
-import Ripple from "../Ripple/Ripple";
+import { Ripple } from "../Ripple";
 
 interface ButtonProps {
   className?: string;
@@ -25,10 +25,12 @@ export default function Button({
   onClick = () => {},
   children = null,
   color = "primary",
-  ripple = true
+  ripple = true,
 }: ButtonProps) {
   const styles = () => {
-    let classNames = `${className} pf-btn${animate ? " pf-fadeIn" : ""} ${isSubmitting ? " pf-btn-disabled" : ""}`;
+    let classNames = `${className} pf-btn${animate ? " pf-fadeIn" : ""} ${
+      isSubmitting ? " pf-btn-disabled" : ""
+    }`;
     classNames += ` pf-btn-${color}`;
     return classNames;
   };
@@ -40,7 +42,11 @@ export default function Button({
       onClick={() => onClick()}
       disabled={isSubmitting || disabled}
     >
-      {isSubmitting ? <Spinner color="white" size="xs" /> : children || <>{text}</>}
+      {isSubmitting ? (
+        <Spinner color="white" size="xs" />
+      ) : (
+        children || <>{text}</>
+      )}
       {ripple && <Ripple />}
     </button>
   );

@@ -1,0 +1,30 @@
+@use "sass:color";
+
+.pf-press-icon {
+  display: flex;
+  cursor: pointer;
+  padding: 6px;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 100%;
+  background-color: transparent;
+  background-position: center;
+  transition: background 0.25s;
+  user-select: none;
+
+  $hoverColor: rgb(231, 231, 231);
+
+  &:hover {
+    transition: background 0.8s;
+    background: $hoverColor
+      radial-gradient(circle, transparent 1%, $hoverColor 1%) center/15000%;
+  }
+
+  &:active {
+    transition: background 0s;
+    background-color: color.adjust($hoverColor, $lightness: -20%, $space: hsl);
+    background-size: 100%;
+  }
+}

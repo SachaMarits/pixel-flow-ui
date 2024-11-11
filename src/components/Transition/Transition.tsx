@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 interface TransitionProps {
   in: boolean;
   duration: number;
-  children: React.ReactNode;
+  children: React.ReactElement;
 }
 
 export default function Transition({
@@ -18,7 +18,7 @@ export default function Transition({
 
     if (inProp) {
       setState("entering");
-      timeoutId = setTimeout(() => setState("entered"), duration);
+      timeoutId = setTimeout(() => setState("entered"), 50);
     } else {
       setState("exiting");
       timeoutId = setTimeout(() => setState("exited"), duration);
@@ -28,11 +28,15 @@ export default function Transition({
   }, [inProp, duration]);
 
   const getClass = () => {
-    if (["entering", "entered"].includes(state)) return `${state} enter`;
-    if (["exiting", "exited"].includes(state)) return `${state} exit`;
+    if (["entering", "entered"].includes(state))
+      return `${state} enter transition`;
+    if (["exiting", "exited"].includes(state))
+      return `${state} exit transition`;
   };
 
-  return state !== "exited" ? (
-    <div className={getClass()}>{children}</div>
-  ) : null;
+  return state !== "exited"
+    ? React.cloneElement(children, {
+        className: `${children.props.className || ""} ${getClass()}`,
+      })
+    : null;
 }

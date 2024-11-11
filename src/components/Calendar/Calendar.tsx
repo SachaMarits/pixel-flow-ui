@@ -1,3 +1,4 @@
+import { PressIcon } from "../Icons";
 import "./calendar.scss";
 import { useState } from "react";
 
@@ -105,40 +106,40 @@ export default function Calendar({
   return (
     <div className="pf-calendar-wrapper">
       <div className="pf-calendar-header">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="pf-left pf-pointer"
-          onClick={() => handleMonthChange(-1)}
-        >
-          <path d="m15 18-6-6 6-6" />
-        </svg>
+        <PressIcon className="pf-left" onClick={() => handleMonthChange(-1)}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="m15 18-6-6 6-6" />
+          </svg>
+        </PressIcon>
         <h2>
           {getMonthName()} {currentYear}
         </h2>
 
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="pf-right pf-pointer"
-          onClick={() => handleMonthChange(1)}
-        >
-          <path d="m9 18 6-6-6-6" />
-        </svg>
+        <PressIcon className="pf-right" onClick={() => handleMonthChange(1)}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="m9 18 6-6-6-6" />
+          </svg>
+        </PressIcon>
       </div>
 
       <div className="pf-calendar">

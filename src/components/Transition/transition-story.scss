@@ -1,0 +1,23 @@
+.transition-story-opacity.transition.entered {
+  opacity: 1;
+}
+
+.transition-story-opacity,
+.transition-story-opacity.exiting {
+  transition: 1s;
+  opacity: 0;
+}
+
+.transition-story-translate.transition.entered {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+}
+
+.transition-story-translate,
+.transition-story-translate.exiting {
+  position: fixed;
+  transition: 1s;
+  top: 0px;
+  right: -200px;
+}
