@@ -14,60 +14,67 @@
   color: white;
 }
 
-.pf-btn:hover {
-  filter: brightness(92.5%);
-}
-
-.pf-btn:active {
-  filter: brightness(85%);
-}
-
 .pf-btn:disabled {
   opacity: 0.7;
   cursor: default;
 }
 
-.pf-btn:disabled:hover {
-  filter: brightness(100%);
-}
-
 .pf-btn-primary {
   background: var(--pixel-flow-primary);
-  &:hover {
+  &:hover:enabled {
     --hover: color-mix(in srgb, var(--pixel-flow-primary), #0000 76%);
     box-shadow: var(--hover) 0px 8px 16px 0px;
+    background: color-mix(in srgb, var(--pixel-flow-primary), #000 12.5%);
   }
 }
 .pf-btn-success {
   background: var(--pixel-flow-success);
-  &:hover {
+  &:hover:enabled {
     --hover: color-mix(in srgb, var(--pixel-flow-success), #0000 76%);
     box-shadow: var(--hover) 0px 8px 16px 0px;
+    background: color-mix(in srgb, var(--pixel-flow-success), #000 12.5%);
   }
 }
 .pf-btn-danger {
   background: var(--pixel-flow-danger);
-  &:hover {
+  &:hover:enabled {
     --hover: color-mix(in srgb, var(--pixel-flow-danger), #0000 76%);
     box-shadow: var(--hover) 0px 8px 16px 0px;
+    background: color-mix(in srgb, var(--pixel-flow-danger), #000 12.5%);
   }
 }
 .pf-btn-warning {
   background: var(--pixel-flow-warning);
-  &:hover {
+  &:hover:enabled {
     --hover: color-mix(in srgb, var(--pixel-flow-warning), #0000 76%);
     box-shadow: var(--hover) 0px 8px 16px 0px;
+    background: color-mix(in srgb, var(--pixel-flow-warning), #000 12.5%);
   }
 }
 .pf-btn-default {
   background: var(--pixel-flow-default);
-  &:hover {
+  &:hover:enabled {
     --hover: color-mix(in srgb, var(--pixel-flow-default), #0000 76%);
     box-shadow: var(--hover) 0px 8px 16px 0px;
+    background: color-mix(in srgb, var(--pixel-flow-default), #000 12.5%);
   }
 }
 .pf-btn-gradient {
-  background: linear-gradient(90deg, var(--pixel-flow-primary) -30%, var(--pixel-flow-secondary) 130%);
+  background: linear-gradient(
+    90deg,
+    var(--pixel-flow-primary) -30%,
+    var(--pixel-flow-secondary) 130%
+  );
+  &:hover:enabled {
+    --gradient: color-mix(
+      in srgb,
+      var(--pixel-flow-primary),
+      var(--pixel-flow-secondary) 50%
+    );
+    --hover: color-mix(in srgb, var(--gradient), #0000 76%);
+    box-shadow: var(--hover) 0px 8px 16px 0px;
+    filter: brightness(92.5%);
+  }
 }
 
 .pf-btn-disabled {

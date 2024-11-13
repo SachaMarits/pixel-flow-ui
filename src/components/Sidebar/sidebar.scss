@@ -3,7 +3,7 @@
   height: 100vh;
   top: 0;
   width: 500px;
-  background: rgba(245, 245, 245, 0.9);
+  background: rgba(245, 245, 245, 0.1);
   backdrop-filter: blur(20px);
   pointer-events: none;
   opacity: 0;
@@ -12,6 +12,12 @@
   z-index: 100;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  background-image: url("../../assets/img/blurred-blue.png"),
+    url("../../assets/img/blurred-purple.png");
+  background-position-x: 100%, 0%;
+  background-position-y: 0%, 100%;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 50% 50%;
 
   .pf-sidebar-header {
     display: flex;

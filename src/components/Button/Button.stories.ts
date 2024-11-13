@@ -81,3 +81,11 @@ export const NoRipple: Story = {
     ripple: false
   }
 };
+
+export const Disabled: Story = {
+  args: {
+    color: "default",
+    text: "Default Button",
+    disabled: true
+  }
+};
