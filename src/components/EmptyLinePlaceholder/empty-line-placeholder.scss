@@ -1,0 +1,17 @@
+.pf-empty-line-placeholder {
+  border: 2px dashed rgb(from var(--pixel-flow-primary) r g b / 50%);
+  background: rgb(from var(--pixel-flow-primary) r g b / 15%);
+  color: var(--pixel-flow-primary);
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.pf-empty-line-placeholder-success {
+  border: 2px dashed rgb(from var(--pixel-flow-success) r g b / 50%);
+  background: rgb(from var(--pixel-flow-success) r g b / 15%);
+  color: var(--pixel-flow-success);
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 4px;
+}

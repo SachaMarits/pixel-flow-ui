@@ -1,0 +1,72 @@
+@use "sass:color";
+
+.pf-file-upload {
+  .pf-file-upload-placeholder {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .pf-upload-icon {
+    margin-right: 8px;
+  }
+
+  .pf-file-preview {
+    background: aliceblue;
+    color: var(--pixel-flow-primary);
+    margin: 8px;
+    border-radius: 16px;
+    padding: 4px 8px;
+    transition: 250ms;
+    user-select: none;
+    word-wrap: none;
+    text-wrap: nowrap;
+
+    &:hover {
+      background: color.adjust(aliceblue, $lightness: -4%, $space: hsl);
+    }
+  }
+}
+
+.pf-files {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pf-image-upload {
+  .pf-image-uploaded {
+    border-radius: 4px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 13px,
+      rgba(17, 17, 26, 0.04) 0px 8px 28px;
+
+    .pf-mdi-close {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      right: 16px;
+      padding: 5px;
+      margin: 5px;
+      font-size: larger;
+      color: var(--pixel-flow-danger);
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 100%;
+      height: 28px;
+      width: 28px;
+      transition: 333ms;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &:hover {
+      .pf-file-delete {
+        opacity: 1;
+      }
+    }
+  }
+}

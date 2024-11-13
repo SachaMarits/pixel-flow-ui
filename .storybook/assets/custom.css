@@ -3,3 +3,7 @@
 .docs-story *, .sb-show-main *, #pf-toast-root  {
   font-family: "Public Sans", sans-serif;
 }
+
+.docs-story, .sb-main-centered {
+  background-color: whitesmoke;
+}

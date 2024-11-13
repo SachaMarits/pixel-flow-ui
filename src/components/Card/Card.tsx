@@ -1,3 +1,5 @@
+import "./card.scss";
+
 interface CardProps {
   className?: string;
   /**

@@ -14,7 +14,6 @@ export default function PressIcon({
   return (
     <div className={`${className} pf-press-icon`} onClick={onClick}>
       {children}
-      {/* <Ripple /> */}
     </div>
   );
 }
