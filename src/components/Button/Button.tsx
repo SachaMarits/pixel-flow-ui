@@ -5,7 +5,14 @@ import { Ripple } from "../Ripple";
 interface ButtonProps {
   className?: string;
   text?: string;
-  color?: "primary" | "success" | "warning" | "danger" | "default" | "gradient";
+  color?:
+    | "primary"
+    | "secondary"
+    | "success"
+    | "warning"
+    | "danger"
+    | "default"
+    | "gradient";
   onClick?: () => void;
   submit?: boolean;
   animate?: boolean;

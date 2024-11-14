@@ -27,6 +27,14 @@
     background: color-mix(in srgb, var(--pixel-flow-primary), #000 12.5%);
   }
 }
+.pf-btn-secondary {
+  background: var(--pixel-flow-secondary);
+  &:hover:enabled {
+    --hover: color-mix(in srgb, var(--pixel-flow-secondary), #0000 76%);
+    box-shadow: var(--hover) 0px 8px 16px 0px;
+    background: color-mix(in srgb, var(--pixel-flow-secondary), #000 12.5%);
+  }
+}
 .pf-btn-success {
   background: var(--pixel-flow-success);
   &:hover:enabled {

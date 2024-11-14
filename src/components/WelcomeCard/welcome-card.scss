@@ -1,0 +1,32 @@
+.pf-welcome-card {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  height: 150px;
+  position: relative;
+  padding: 32px !important;
+  background: linear-gradient(
+      90deg,
+      var(--pixel-flow-primary),
+      var(--pixel-flow-secondary)
+    ),
+    url("../../assets/img/welcome-card-background.png") !important;
+  background-size: cover !important;
+  background-blend-mode: color;
+  color: white;
+
+  h1 {
+    font-size: x-large;
+  }
+
+  p {
+    opacity: 0.8;
+  }
+
+  svg {
+    height: 150px;
+    width: auto;
+    position: absolute;
+    right: 32px;
+  }
+}
