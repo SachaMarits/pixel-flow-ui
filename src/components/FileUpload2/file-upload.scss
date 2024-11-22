@@ -1,0 +1,147 @@
+@use "sass:color";
+
+.pf-file-upload2 {
+  width: 100%;
+
+  .pf-file-upload-placeholder {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    background: rgba(145 158 171 / 0.08);
+    border-color: rgba(145, 158, 171, 0.2);
+    border-style: dashed;
+    border-width: 1px;
+    border-radius: 16px;
+    gap: 8px;
+    transition: 250ms;
+
+    &:hover {
+      cursor: pointer;
+      background: rgba(145 158 171 / 0.18);
+    }
+
+    &.pf-file-upload-over {
+      border-color: rgb(from var(--pixel-flow-primary) r g b / 50%);
+      background: rgb(from var(--pixel-flow-primary) r g b / 15%);
+    }
+
+    h3 {
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+    p {
+      margin: 0;
+      color: #455a64;
+      opacity: 0.8;
+      u {
+        color: var(--pixel-flow-primary);
+      }
+    }
+  }
+
+  .pf-upload-icon {
+    margin-right: 8px;
+  }
+
+  .pf-files {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+
+    .pf-file-preview {
+      border-radius: 16px;
+      transition: 250ms;
+      user-select: none;
+      word-wrap: none;
+      text-wrap: nowrap;
+      display: flex;
+      align-items: center;
+      border-color: rgba(145, 158, 171, 0.2);
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 16px;
+      justify-content: space-between;
+      gap: 8px;
+      width: 100%;
+
+      .pf-file-preview-details {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px;
+
+        .pf-file-svg-container {
+          display: inline-block;
+          position: relative;
+          width: 100%;
+          vertical-align: middle;
+          overflow: hidden;
+        }
+
+        .pf-file-preview-text {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          p {
+            margin: 0;
+          }
+
+          .pf-file-preview-secondary {
+            font-size: small;
+            color: #455a64;
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+
+    .pf-file-preview-delete {
+      margin-right: 12px;
+      .pf-file-delete {
+        fill: #455a64;
+      }
+    }
+  }
+}
+
+.pf-image-upload {
+  .pf-image-uploaded {
+    border-radius: 4px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 13px,
+      rgba(17, 17, 26, 0.04) 0px 8px 28px;
+
+    .pf-mdi-close {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      right: 16px;
+      padding: 5px;
+      margin: 5px;
+      font-size: larger;
+      color: var(--pixel-flow-danger);
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 100%;
+      height: 28px;
+      width: 28px;
+      transition: 333ms;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &:hover {
+      .pf-file-delete {
+        opacity: 1;
+      }
+    }
+  }
+}

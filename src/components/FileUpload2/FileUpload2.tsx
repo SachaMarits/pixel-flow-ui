@@ -3,6 +3,9 @@ import "../EmptyLinePlaceholder/empty-line-placeholder.scss";
 
 import React, { useState, useRef, useEffect } from "react";
 import { Button } from "../Button";
+import FileUploadIcon from "./FileUploadIcon";
+import { PressIcon } from "../Icons";
+import FilePreviewIcon from "./FilePreviewIcon";
 
 interface CustomFile extends File {
   base64Data?: string;
@@ -17,7 +20,7 @@ interface FileUploadProps {
   showAllowedExtensions?: boolean;
 }
 
-export default function FileUpload({
+export default function FileUpload2({
   className = "",
   allowedExtensions,
   multiple,
@@ -72,6 +75,18 @@ export default function FileUpload({
     setFiles(multiple ? [...files, ...filesWithBase64] : [filesWithBase64]);
   };
 
+  const formatFileSize = (bytes: number) => {
+    const units = ["o", "Ko", "Mo", "Go", "To"];
+    let index = 0;
+
+    while (bytes >= 1024 && index < units.length - 1) {
+      bytes /= 1024;
+      index++;
+    }
+
+    return `${bytes.toFixed(2)} ${units[index]}`;
+  };
+
   const displayAllowedExtensions =
     allowedExtensions &&
     showAllowedExtensions &&
@@ -83,7 +98,7 @@ export default function FileUpload({
 
   return (
     <div
-      className={`pf-file-upload ${className}`}
+      className={`pf-file-upload2 ${className}`}
       onDragEnter={dragAndDrop ? handleDragEnter : undefined}
       onDragOver={dragAndDrop ? handleDragEnter : undefined}
       onDragLeave={dragAndDrop ? handleDragLeave : undefined}
@@ -91,33 +106,16 @@ export default function FileUpload({
     >
       {dragAndDrop && (
         <div
-          className={`pf-empty-line-placeholder${isDragOver ? "-success" : ""}`}
+          className={`pf-file-upload-placeholder ${
+            isDragOver ? "pf-file-upload-over" : ""
+          }`}
+          onClick={() => fileInputRef?.current?.click()}
         >
-          <p className="pf-file-upload-placeholder">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="pf-upload-icon"
-            >
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <polyline points="17 8 12 3 7 8" />
-              <line x1="12" x2="12" y1="3" y2="15" />
-            </svg>{" "}
-            Drag and drop or{" "}
-            <u
-              className="pf-pointer"
-              onClick={() => fileInputRef?.current?.click()}
-            >
-              choose {multiple ? "files" : "a file"}
-            </u>{" "}
-            to upload {displayAllowedExtensions}
+          <FileUploadIcon />
+          <h3>Drop or select file</h3>
+          <p>
+            Drag and drop or <u>choose {multiple ? "files" : "a file"}</u> to
+            upload {displayAllowedExtensions}
           </p>
         </div>
       )}
@@ -139,7 +137,6 @@ export default function FileUpload({
       {!dragAndDrop && (
         <Button
           color="primary"
-          // action="upload"
           onClick={() =>
             fileInputRef.current ? fileInputRef.current.click() : {}
           }
@@ -151,19 +148,32 @@ export default function FileUpload({
       <div className="pf-files">
         {files
           .filter((f) => f.name)
-          .map(({ name }) => (
-            <div key={name} className="pf-file-preview">
-              {name}{" "}
-              <svg
-                className="pf-file-delete pf-pointer"
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                onClick={() => setFiles(files.filter((f) => f.name !== name))}
+          .map(({ name, type, size }, index) => (
+            <div key={name + index} className="pf-file-preview">
+              <div className="pf-file-preview-details">
+                <FilePreviewIcon type={type} />
+
+                <div className="pf-file-preview-text">
+                  <p>{name}</p>
+                  <p className="pf-file-preview-secondary">
+                    {formatFileSize(size)}
+                  </p>
+                </div>
+              </div>
+              <PressIcon
+                className="pf-file-preview-delete"
+                onClick={() => setFiles(files.filter((_, i) => i !== index))}
               >
-                <path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path>
-              </svg>
+                <svg
+                  className="pf-file-delete pf-pointer"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path>
+                </svg>
+              </PressIcon>
             </div>
           ))}
       </div>

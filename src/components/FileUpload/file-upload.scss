@@ -19,15 +19,22 @@
     color: var(--pixel-flow-primary);
     margin: 8px;
     border-radius: 16px;
-    padding: 4px 8px;
+    padding: 4px 10px;
     transition: 250ms;
     user-select: none;
     word-wrap: none;
     text-wrap: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 
     &:hover {
       background: color.adjust(aliceblue, $lightness: -4%, $space: hsl);
     }
+  }
+
+  .pf-file-delete {
+    fill: var(--pixel-flow-danger);
   }
 }
 

@@ -1,13 +1,20 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import dts from "vite-plugin-dts";
+import path from "path";
 
 export default defineConfig({
   plugins: [react(), dts()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "src"),
+    },
+  },
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@use "src/assets/scss/app.scss";`,
+        api: "modern",
+        additionalData: `@use "@/assets/scss/app.scss" as *;`,
       },
     },
   },
